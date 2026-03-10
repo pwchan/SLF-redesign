@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLF 網站設計方案比較 | Website Style Comparison</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #F5F3EE;
+      color: #2D2D2D;
+      line-height: 1.7;
+    }
+
+    .page-header {
+      background: #1A1A1A;
+      color: white;
+      padding: 48px 32px;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 32px;
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+    }
+
+    .page-header p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .intro p {
+      font-size: 16px;
+      color: #666;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.9;
+    }
+
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+      gap: 32px;
+    }
+
+    .style-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #E0DBD3;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .style-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .style-preview {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .style-preview iframe {
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+      transform-origin: top left;
+      border: none;
+      pointer-events: none;
+    }
+
+    .style-info {
+      padding: 24px;
+    }
+
+    .style-label {
+      display: inline-block;
+      padding: 3px 10px;
+      background: #F0ECE4;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #8B7355;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .style-info h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: #2D2D2D;
+    }
+
+    .style-info .desc-en {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+
+    .style-info p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .color-swatches {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+
+    .style-link {
+      display: inline-block;
+      padding: 10px 24px;
+      background: #2D2D2D;
+      color: white;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: background 0.2s;
+    }
+
+    .style-link:hover { background: #555; }
+
+    .footer-note {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 13px;
+      color: #999;
+      border-top: 1px solid #E0DBD3;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .styles-grid { grid-template-columns: 1fr; }
+      .page-header h1 { font-size: 24px; }
+      .style-preview { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>SLF 網站設計方案</h1>
+  <p>Website Style Comparison — 5 Design Options</p>
+</div>
+
+<div class="container">
+  <div class="intro">
+    <p>以下為 SLF 網站重新設計的五個風格方案。每個方案使用相同的內容結構和導航，但風格各有特色。請點擊「瀏覽完整網站」查看各方案的完整效果，然後選擇最適合 SLF 的設計方向。</p>
+  </div>
+
+  <div class="styles-grid">
+
+    <!-- Style: Warm & Welcoming (Original) -->
+    <div class="style-card">
+      <div class="style-preview">
+        <iframe src="style-original/index.html" loading="lazy"></iframe>
+      </div>
+      <div class="style-info">
+        <div class="style-label">已完成</div>
+        <h2>溫暖歡迎 Warm & Welcoming</h2>
+        <div class="desc-en">Earth tones, inviting atmosphere</div>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#6B4C3B;"></div>
+          <div class="swatch" style="background:#7A8B6F;"></div>
+          <div class="swatch" style="background:#B07352;"></div>
+          <div class="swatch" style="background:#FDF6EE;"></div>
+        </div>
+        <p>溫暖的棕色與鼠尾草綠色調，營造親切、舒適的氛圍。圓潤的設計元素，適合強調群體和關懷。</p>
+        <a href="style-original/index.html" class="style-link">瀏覽完整網站 →</a>
+      </div>
+    </div>
+
+    <!-- Style A: Classic SLF -->
+    <div class="style-card">
+      <div class="style-preview">
+        <iframe src="style-a/index.html" loading="lazy"></iframe>
+      </div>
+      <div class="style-info">
+        <div class="style-label">方案 A</div>
+        <h2>經典 SLF Classic SLF</h2>
+        <div class="desc-en">Blue tones, traditional church layout</div>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#2C5F8A;"></div>
+          <div class="swatch" style="background:#1B3A5C;"></div>
+          <div class="swatch" style="background:#4A90D9;"></div>
+          <div class="swatch" style="background:#F4F7FB;"></div>
+        </div>
+        <p>沿用現有 slfus.org 的藍色調和傳統教會網站風格。對現有用戶來說最為熟悉，過渡最為平順。</p>
+        <a href="style-a/index.html" class="style-link">瀏覽完整網站 →</a>
+      </div>
+    </div>
+
+    <!-- Style B: Quiet Garden -->
+    <div class="style-card">
+      <div class="style-preview">
+        <iframe src="style-b/index.html" loading="lazy"></iframe>
+      </div>
+      <div class="style-info">
+        <div class="style-label">方案 B</div>
+        <h2>靜謐花園 Quiet Garden</h2>
+        <div class="desc-en">Soft greens, peaceful & contemplative</div>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#4A6741;"></div>
+          <div class="swatch" style="background:#7FA87A;"></div>
+          <div class="swatch" style="background:#A3C49E;"></div>
+          <div class="swatch" style="background:#F5F9F3;"></div>
+        </div>
+        <p>柔和的綠色與大量留白，營造寧靜、默想的氛圍。如同走進退修中心，非常切合事工的靈修主題。</p>
+        <a href="style-b/index.html" class="style-link">瀏覽完整網站 →</a>
+      </div>
+    </div>
+
+    <!-- Style C: Modern Editorial -->
+    <div class="style-card">
+      <div class="style-preview">
+        <iframe src="style-c/index.html" loading="lazy"></iframe>
+      </div>
+      <div class="style-info">
+        <div class="style-label">方案 C</div>
+        <h2>現代編輯 Modern Editorial</h2>
+        <div class="desc-en">Dark navy + gold, magazine typography</div>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#1A2744;"></div>
+          <div class="swatch" style="background:#C9A84C;"></div>
+          <div class="swatch" style="background:#2A3D66;"></div>
+          <div class="swatch" style="background:#F8F6F1;"></div>
+        </div>
+        <p>深邃的藏青色配金色點綴，雜誌風格的排版。專業而精緻，適合吸引年輕受眾，展現權威與溫度。</p>
+        <a href="style-c/index.html" class="style-link">瀏覽完整網站 →</a>
+      </div>
+    </div>
+
+    <!-- Style D: Ink & Paper -->
+    <div class="style-card">
+      <div class="style-preview">
+        <iframe src="style-d/index.html" loading="lazy"></iframe>
+      </div>
+      <div class="style-info">
+        <div class="style-label">方案 D</div>
+        <h2>墨韻紙香 Ink & Paper</h2>
+        <div class="desc-en">Calligraphy-inspired, cultural & artistic</div>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#1A1A1A;"></div>
+          <div class="swatch" style="background:#8B4513;"></div>
+          <div class="swatch" style="background:#6B6560;"></div>
+          <div class="swatch" style="background:#F5F0E8;"></div>
+        </div>
+        <p>以中國書法為靈感，墨黑與宣紙色調。極簡而富有文化氣息，突顯華人基督徒的文化身份認同。</p>
+        <a href="style-d/index.html" class="style-link">瀏覽完整網站 →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-note">
+    <p>SLF 網站重新設計 — 設計方案比較頁面<br>
+    所有方案使用相同的頁面結構（17頁）和內容，僅風格不同。<br>
+    請將所有資料夾放在同一目錄下，然後在瀏覽器中打開此頁面。</p>
+  </div>
+</div>
+
+</body>
+</html>
