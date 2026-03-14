@@ -178,7 +178,7 @@ img { max-width: 100%; height: auto; display: block; }
   z-index: 999;
 }
 
-.nav-item:hover .nav-dropdown { display: block; }
+.nav-item.has-children.open > .nav-dropdown { display: block; }
 
 .nav-dropdown li a {
   display: block;
@@ -691,6 +691,24 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    FOOTER
    ============================================ */
+
+/* Dropdown arrow indicator */
+.nav-arrow {
+  font-size: 10px;
+  margin-left: 4px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.nav-item.has-children.open > a .nav-arrow {
+  transform: rotate(180deg);
+}
+
+/* Cursor pointer for dropdown parents */
+.nav-item.has-children > a {
+  cursor: pointer;
+}
+
 .site-footer {
   background: var(--color-primary-dark);
   color: rgba(255,255,255,0.7);
@@ -798,8 +816,7 @@ img { max-width: 100%; height: auto; display: block; }
     background: var(--color-sand);
   }
 
-  .nav-item:hover .nav-dropdown,
-  .nav-item.open .nav-dropdown { display: block; }
+  .nav-item.has-children.open > .nav-dropdown { display: block; }
 
   .hero h1 { font-size: 28px; }
   .hero .subtitle { font-size: 16px; }

@@ -21,15 +21,15 @@
         <span class="logo-zh">基 督 徒 靈 命 塑 造 協 會</span>
       </div>
     </a>
-    <button class="menu-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle menu">
+    <button class="menu-toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <nav class="main-nav">
     <ul class="nav-list">
       <li class="nav-item "><a href="index.html">主頁</a></li>
-      <li class="nav-item active">
-        <a href="meditation-intro.html">屬靈操練事工</a>
+      <li class="nav-item has-children active">
+        <a href="#">屬靈操練事工 <span class="nav-arrow">▾</span></a>
         <ul class="nav-dropdown">
           <li class="dropdown-section">安靜默想系列</li>
           <li><a href="meditation-intro.html">目的及課程簡介</a></li>
@@ -41,8 +41,8 @@
           <li><a href="bookclub.html">讀書會 (Mini Series)</a></li>
         </ul>
       </li>
-      <li class="nav-item ">
-        <a href="formation.html">靈命塑造退修事工</a>
+      <li class="nav-item has-children ">
+        <a href="#">靈命塑造退修事工 <span class="nav-arrow">▾</span></a>
         <ul class="nav-dropdown">
           <li><a href="formation.html">目的及簡介</a></li>
           <li><a href="formation-testimonials.html">學員分享</a></li>
@@ -50,8 +50,8 @@
         </ul>
       </li>
       <li class="nav-item "><a href="workplace.html">職場人生拓展事工</a></li>
-      <li class="nav-item ">
-        <a href="resources-meditation.html">資源</a>
+      <li class="nav-item has-children ">
+        <a href="#">資源 <span class="nav-arrow">▾</span></a>
         <ul class="nav-dropdown">
           <li><a href="resources-meditation.html">默想操練</a></li>
           <li><a href="resources-seminars.html">講座重溫</a></li>
@@ -59,8 +59,8 @@
         </ul>
       </li>
       <li class="nav-item "><a href="giving.html">奉獻</a></li>
-      <li class="nav-item ">
-        <a href="about.html">關於我們</a>
+      <li class="nav-item has-children ">
+        <a href="#">關於我們 <span class="nav-arrow">▾</span></a>
         <ul class="nav-dropdown">
           <li><a href="about.html">我們的使命</a></li>
           <li><a href="team.html">認識同工團隊</a></li>
@@ -106,5 +106,44 @@
     <p>&copy; 2025 Spiritual Life Formation 基督徒靈命塑造協會. All rights reserved.</p>
   </div>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Find all nav items that have a dropdown
+  var parents = document.querySelectorAll('.nav-item.has-children > a');
+  
+  parents.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault(); // Never navigate
+      var item = this.parentElement;
+      
+      // Close other open dropdowns (sibling items)
+      var siblings = item.parentElement.querySelectorAll('.nav-item.has-children');
+      siblings.forEach(function(sib) {
+        if (sib !== item) sib.classList.remove('open');
+      });
+      
+      // Toggle this dropdown
+      item.classList.toggle('open');
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-item.has-children')) {
+      document.querySelectorAll('.nav-item.has-children.open').forEach(function(item) {
+        item.classList.remove('open');
+      });
+    }
+  });
+
+  // Hamburger menu toggle
+  var toggle = document.querySelector('.menu-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', function() {
+      document.querySelector('.main-nav').classList.toggle('open');
+    });
+  }
+});
+</script>
 </body>
 </html>
